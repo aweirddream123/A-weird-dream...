@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+<title>Visitor Counter</title>
+<link rel="stylesheet" href="{{url_for('static',filename='retro.css')}}">
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="titlebar">
+CyberNet Visitor Counter
+</div>
+
+
+<h1>
+★ HIT COUNTER ★
+</h1>
+
+
+<div class="box center">
+
+<pre>
+
+************************
+*                      *
+*  {{username}}       *
+*                      *
+*  VISITORS:           *
+*                      *
+*     {{views}}        *
+*                      *
+************************
+
+</pre>
+
+</div>
+
+
+<a href="/~{{username}}/">Return Home</a>
+
+</div>
+
+</body>
+
+</html>

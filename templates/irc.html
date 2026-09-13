@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>CyberNet IRC</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='retro.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<div class="titlebar">
+CyberNet IRC Network
+</div>
+
+
+<h1>
+💬 CYBERNET IRC 97
+</h1>
+
+
+
+<table width="100%" cellpadding="8">
+
+<tr>
+
+
+<td width="25%" valign="top">
+
+
+<div class="box">
+
+<h2>
+Channels
+</h2>
+
+
+{% for channel in channels %}
+
+<a href="/irc?channel={{channel[0]}}">
+
+{{channel[0]}}
+
+</a>
+
+<br>
+
+<small>
+
+{{channel[1]}}
+
+</small>
+
+<hr>
+
+{% endfor %}
+
+
+</div>
+
+
+</td>
+
+
+
+<td valign="top">
+
+
+
+<div class="box">
+
+
+<h2>
+
+Currently chatting in:
+
+{{selected}}
+
+</h2>
+
+
+{% for msg in messages %}
+
+
+<div class="chat-message">
+
+
+<b>
+
+{{msg.username}}
+
+</b>
+
+
+says:
+
+<br>
+
+
+{{msg.message}}
+
+
+<br>
+
+
+<small>
+
+{{msg.created}}
+
+</small>
+
+
+</div>
+
+
+<hr>
+
+
+{% else %}
+
+
+<center>
+
+No messages yet.
+
+<br>
+
+Start the conversation!
+
+</center>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+<div class="box">
+
+
+<h2>
+Send Message
+</h2>
+
+
+<form method="post"
+action="/irc?channel={{selected}}">
+
+
+Nickname:
+
+<br>
+
+
+<input
+type="text"
+name="username"
+value="Guest"
+size="25">
+
+
+<br><br>
+
+
+Message:
+
+<br>
+
+
+<textarea
+name="message"
+rows="4"
+cols="50"></textarea>
+
+
+<br><br>
+
+
+<input
+type="submit"
+value="SEND TO IRC">
+
+
+</form>
+
+
+</div>
+
+
+
+</td>
+
+
+</tr>
+
+
+</table>
+
+
+
+
+<center>
+
+<a href="/">
+Return to CyberNet
+
+</a>
+
+</center>
+
+
+</div>
+
+
+</body>
+
+</html>

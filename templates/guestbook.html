@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+    <title>CyberNet Guestbook 97</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='retro.css') }}">
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="titlebar">
+        CyberNet 97 :: Visitor Guestbook
+    </div>
+
+    <h1>★ CYBERNET GUESTBOOK ★</h1>
+
+    <div class="nav">
+        <a href="/">HOME</a> |
+        <a href="/directory">DIRECTORY</a> |
+        <a href="/bbs">BBS</a> |
+        <a href="/irc">IRC</a>
+    </div>
+
+
+    <div class="box center">
+
+        <h2>Sign My Guestbook!</h2>
+
+        <form method="post" action="/guestbook/sign">
+
+            <b>Your Name:</b><br>
+            <input type="text" name="name" size="35"
+                   placeholder="CyberSurfer">
+
+            <br><br>
+
+            <b>Your Message:</b><br>
+            <textarea name="message"
+                      rows="6"
+                      cols="55"
+                      placeholder="Your message here..."></textarea>
+
+            <br><br>
+
+            <input type="submit" value="SIGN GUESTBOOK">
+
+        </form>
+
+    </div>
+
+
+    <div class="box">
+
+        <h2>Recent Visitors</h2>
+
+        {% if entries %}
+
+            {% for entry in entries %}
+
+            <div class="box">
+
+                <font color="blue">
+                    <b>{{ entry.name }}</b>
+                </font>
+
+                wrote:
+
+                <p>
+                    {{ entry.message }}
+                </p>
+
+                <small>
+                    Posted:
+                    {{ entry.created_at }}
+                </small>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>
+                No visitors yet!
+                Be the first to sign the CyberNet guestbook!
+            </p>
+
+        {% endif %}
+
+    </div>
+
+
+    <div class="box center">
+
+        <pre>
+************************************
+*  THANK YOU FOR VISITING CYBERNET *
+*                                  *
+*  Visitor #0001337                *
+************************************
+        </pre>
+
+        <p>
+            <a href="/">Return to CyberNet</a>
+        </p>
+
+    </div>
+
+
+    <div class="footer">
+        CyberNet 97 Guestbook System v1.0<br>
+        Best viewed with Netscape Navigator 3.0
+    </div>
+
+</div>
+
+</body>
+</html>

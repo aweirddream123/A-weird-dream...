@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+<title>88x31 Button Exchange</title>
+<link rel="stylesheet" href="{{url_for('static',filename='retro.css')}}">
+</head>
+
+
+<body>
+
+<div class="page">
+
+<div class="titlebar">
+CyberNet Button Exchange
+</div>
+
+
+<h1>
+88x31 BUTTONS
+</h1>
+
+
+<div class="box">
+
+{% for b in buttons %}
+
+<div class="badge">
+
+<a href="{{b.url}}">
+{{b.title}}
+</a>
+
+</div>
+
+<br>
+
+Submitted by:
+{{b.username}}
+
+<hr>
+
+{% else %}
+
+No buttons yet.
+
+{% endfor %}
+
+
+</div>
+
+
+
+<div class="box">
+
+<h2>
+Submit Your Button
+</h2>
+
+
+<form method="post" action="/buttons/add">
+
+Username:
+<input name="username">
+
+<br>
+
+Title:
+<input name="title">
+
+<br>
+
+URL:
+<input name="url">
+
+<br><br>
+
+<input type="submit" value="SUBMIT BUTTON">
+
+</form>
+
+
+</div>
+
+
+</div>
+
+</body>
+</html>

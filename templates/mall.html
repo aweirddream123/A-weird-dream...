@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+
+
+<head>
+
+<title>
+CyberMall
+</title>
+
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='retro.css') }}">
+
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<div class="titlebar">
+
+CyberMall Online Shopping Center
+
+</div>
+
+
+
+<h1>
+
+🛒 CYBERMALL 97
+
+</h1>
+
+
+
+
+<div class="box center">
+
+
+<h2>
+
+Welcome Shopper!
+
+</h2>
+
+
+<p>
+
+The coolest products on the World Wide Web!
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+Available Products
+</h2>
+
+
+
+{% for product in products %}
+
+
+
+<div class="box">
+
+
+<h3>
+
+{{product.name}}
+
+</h3>
+
+
+
+<p>
+
+{{product.description}}
+
+</p>
+
+
+
+<b>
+
+Price:
+
+${{ "%.2f"|format(product.price) }}
+
+</b>
+
+
+
+<br><br>
+
+
+<form method="post"
+action="/mall/buy">
+
+
+<input
+type="hidden"
+name="product"
+value="{{product.id}}">
+
+
+<input
+type="submit"
+value="BUY NOW">
+
+
+</form>
+
+
+</div>
+
+
+
+{% else %}
+
+
+
+<center>
+
+No products available.
+
+</center>
+
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+Shopping Cart
+</h2>
+
+
+Current Total:
+
+
+<b>
+
+${{ "%.2f"|format(total) }}
+
+</b>
+
+
+</div>
+
+
+
+
+
+<div class="center">
+
+
+<a href="/">
+
+Return to CyberNet
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+</body>
+
+
+</html>

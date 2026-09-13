@@ -1,0 +1,189 @@
+<!doctype html>
+
+<html>
+
+
+<head>
+
+<title>{{page.title}}</title>
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='retro.css')}}">
+
+</head>
+
+
+<body
+style="background:{{page.bg}};color:{{page.text_color}}">
+
+
+<div style="width:760px;margin:auto;">
+
+
+
+<h1 style="color:{{page.text_color}}">
+
+{{page.title}}
+
+</h1>
+
+
+
+<center>
+
+
+<div class="badge">
+
+UNDER CONSTRUCTION
+
+</div>
+
+
+<div class="badge">
+
+BEST VIEWED 800x600
+
+</div>
+
+
+</center>
+
+
+
+<hr>
+
+
+
+<h2 style="color:{{page.text_color}}">
+
+Welcome!
+
+</h2>
+
+
+<p>
+
+Welcome to my totally awesome corner of CyberNet!
+
+</p>
+
+
+
+<h2 style="color:{{page.text_color}}">
+
+About Me
+
+</h2>
+
+
+<pre>
+
+{{page.favorites}}
+
+</pre>
+
+
+
+
+<h2 style="color:{{page.text_color}}">
+
+My Internet Stuff
+
+</h2>
+
+
+<ul>
+
+
+<li>
+
+<a href="/guestbook">
+
+Sign my Guestbook
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="/links/{{page.username}}">
+
+My Cool Links
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="/stats/{{page.username}}">
+
+My Stats
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a href="/buttons">
+
+My Buttons
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+
+
+<div class="counter">
+
+VISITORS: {{views}}
+
+</div>
+
+
+
+<hr>
+
+
+
+<center>
+
+
+<a href="/">
+
+CyberNet 97
+
+</a>
+
+
+<br>
+
+
+Last Updated:
+September 13, 1997
+
+
+</center>
+
+
+
+</div>
+
+
+</body>
+
+
+</html>

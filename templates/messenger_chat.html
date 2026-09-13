@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>
+Chat with {{ buddy.username }}
+</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='retro.css') }}">
+
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="titlebar">
+
+CyberMessenger 97 -
+{{ buddy.username }}
+
+</div>
+
+
+<h1>
+
+{{ buddy.username }}
+
+</h1>
+
+
+<div class="box">
+
+Status:
+
+{% if buddy.status == "online" %}
+
+<font color="green">
+● ONLINE
+</font>
+
+{% elif buddy.status == "away" %}
+
+<font color="orange">
+● AWAY
+</font>
+
+{% else %}
+
+<font color="red">
+● OFFLINE
+</font>
+
+{% endif %}
+
+
+{% if buddy.away %}
+
+<br>
+
+Away Message:
+
+<b>
+{{ buddy.away }}
+</b>
+
+{% endif %}
+
+</div>
+
+
+<div class="chat-window">
+
+
+{% for message in messages %}
+
+<div class="chat-message">
+
+<b>
+
+{% if message.sender == username %}
+
+{{ username }}
+
+{% else %}
+
+{{ buddy.username }}
+
+{% endif %}
+
+</b>
+
+
+says:
+
+<br>
+
+{{ message.message }}
+
+<br>
+
+<small>
+{{ message.sent }}
+</small>
+
+<hr>
+
+</div>
+
+{% else %}
+
+<p>
+No messages yet.
+</p>
+
+{% endfor %}
+
+
+</div>
+
+
+<div class="box">
+
+
+<form method="post">
+
+
+<textarea
+name="message"
+rows="5"
+cols="65"
+placeholder="Type your message here..."></textarea>
+
+
+<br><br>
+
+
+<input
+type="submit"
+value="SEND MESSAGE">
+
+
+</form>
+
+
+</div>
+
+
+<div class="center">
+
+<a href="/messenger">
+← Back to Buddy List
+</a>
+
+</div>
+
+
+</div>
+
+</body>
+
+</html>

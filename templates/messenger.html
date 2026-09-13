@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>CyberMessenger 97</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='retro.css') }}">
+
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="titlebar">
+CyberMessenger 97
+</div>
+
+<h1>
+★ CYBERMESSENGER ★
+</h1>
+
+<div class="center">
+
+<pre>
+   ______________________________
+  |                              |
+  |     CYBERMESSENGER 97        |
+  |                              |
+  |  Talk to your Internet       |
+  |  friends in REAL TIME!       |
+  |______________________________|
+</pre>
+
+</div>
+
+{% if error %}
+
+<div class="box notice">
+{{ error }}
+</div>
+
+{% endif %}
+
+
+<div class="box">
+
+<h2>Sign On</h2>
+
+<form method="post">
+
+Screen Name:<br>
+
+<input
+type="text"
+name="username"
+size="30"
+maxlength="30">
+
+<br><br>
+
+Password:<br>
+
+<input
+type="password"
+name="password"
+size="30">
+
+<br><br>
+
+<input
+type="submit"
+value="SIGN ON">
+
+</form>
+
+</div>
+
+
+<div class="box">
+
+<h2>New to CyberMessenger?</h2>
+
+<form method="post"
+action="/messenger/register">
+
+Choose Screen Name:<br>
+
+<input
+name="username"
+size="30"
+maxlength="30">
+
+<br><br>
+
+Choose Password:<br>
+
+<input
+type="password"
+name="password"
+size="30">
+
+<br><br>
+
+<input
+type="submit"
+value="CREATE SCREEN NAME">
+
+</form>
+
+</div>
+
+
+<div class="box">
+
+<b>CyberMessenger 97 System Requirements:</b>
+
+<ul>
+
+<li>Windows 95 or better</li>
+
+<li>14.4k modem</li>
+
+<li>Internet connection</li>
+
+<li>At least 8 MB RAM</li>
+
+<li>Cool screen name</li>
+
+</ul>
+
+</div>
+
+
+<div class="center">
+
+<a href="/">
+Return to CyberNet
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

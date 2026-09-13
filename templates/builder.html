@@ -1,0 +1,186 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+<title>Homepage Builder</title>
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='retro.css')}}">
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<div class="titlebar">
+
+CyberNet Homepage Builder 1.0
+
+</div>
+
+
+<h1>
+BUILD YOUR OWN HOMEPAGE
+</h1>
+
+
+
+<div class="box">
+
+
+<form method="post">
+
+
+Username:
+
+<br>
+
+cybernet97.com/~
+
+
+<input name="username">
+
+
+<br><br>
+
+
+Title:
+
+<br>
+
+<input name="title"
+value="My Totally Awesome Homepage"
+size="50">
+
+
+<br><br>
+
+
+Background Color:
+
+<br>
+
+<select name="bg">
+
+<option value="#000080">
+Navy
+</option>
+
+<option value="#000000">
+Black
+</option>
+
+<option value="#800080">
+Purple
+</option>
+
+</select>
+
+
+
+<br><br>
+
+
+Text Color:
+
+<br>
+
+<select name="text_color">
+
+<option value="#ffffff">
+White
+</option>
+
+<option value="#00ff00">
+Green
+</option>
+
+<option value="#ffff00">
+Yellow
+</option>
+
+</select>
+
+
+
+<br><br>
+
+
+My Favorite Things:
+
+<br>
+
+
+<textarea name="favorites"
+rows="8"
+cols="60">
+
+Games
+Music
+Cool Websites
+
+</textarea>
+
+
+<br><br>
+
+
+<input type="submit"
+value="CREATE HOMEPAGE">
+
+
+</form>
+
+
+</div>
+
+
+
+
+{% if created %}
+
+
+<div class="box center">
+
+
+<font color="green">
+
+<b>
+YOUR HOMEPAGE IS ONLINE!
+</b>
+
+</font>
+
+
+<p>
+
+<a href="/~{{created}}/">
+
+http://cybernet97.com/~{{created}}/
+
+</a>
+
+
+</p>
+
+
+</div>
+
+
+{% endif %}
+
+
+
+</div>
+
+
+</body>
+
+
+</html>

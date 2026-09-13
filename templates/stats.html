@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>Homepage Statistics</title>
+
+<link rel="stylesheet" href="{{url_for('static',filename='retro.css')}}">
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<div class="titlebar">
+
+CyberNet Homepage Statistics
+
+</div>
+
+
+<h1>
+
+{{username}}
+
+</h1>
+
+
+
+<div class="box">
+
+
+<table border="2" width="100%">
+
+<tr>
+<td>
+Visitors
+</td>
+
+<td>
+{{counter.views}}
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Last Updated
+</td>
+
+<td>
+{{info.updated}}
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Favorite MIDI
+</td>
+
+<td>
+{{info.midi}}
+</td>
+
+</tr>
+
+
+</table>
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>

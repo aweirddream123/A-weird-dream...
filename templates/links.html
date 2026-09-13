@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>{{username}} Links</title>
+
+<link rel="stylesheet" href="{{url_for('static',filename='retro.css')}}">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<div class="titlebar">
+{{username}}'s Cool Links
+</div>
+
+
+<h1>
+★ COOL LINKS ★
+</h1>
+
+
+
+<div class="box">
+
+
+{% for l in links %}
+
+
+<h2>
+
+<a href="{{l.url}}">
+{{l.title}}
+
+</a>
+
+</h2>
+
+
+<p>
+{{l.description}}
+</p>
+
+
+<hr>
+
+
+{% else %}
+
+No links yet.
+
+{% endfor %}
+
+
+</div>
+
+
+<div class="box">
+
+<form method="post" action="/links/add">
+
+<input type="hidden" name="username" value="{{username}}">
+
+
+Title:
+<input name="title">
+
+<br>
+
+URL:
+<input name="url">
+
+<br>
+
+Description:
+<input name="description">
+
+
+<br><br>
+
+<input type="submit" value="ADD LINK">
+
+
+</form>
+
+</div>
+
+
+</div>
+
+</body>
+
+</html>

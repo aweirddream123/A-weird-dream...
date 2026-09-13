@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>CyberMessenger - {{ user.username }}</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='retro.css') }}">
+
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="titlebar">
+
+CyberMessenger 97 -
+{{ user.username }}
+
+</div>
+
+
+<table width="100%" cellpadding="8">
+
+<tr>
+
+<td width="35%" valign="top">
+
+
+<div class="box">
+
+<h2>
+Buddy List
+</h2>
+
+
+{% for buddy in buddies %}
+
+<div class="buddy">
+
+{% if buddy.status == "online" %}
+
+<font color="green">
+●
+</font>
+
+{% elif buddy.status == "away" %}
+
+<font color="orange">
+●
+</font>
+
+{% else %}
+
+<font color="red">
+●
+</font>
+
+{% endif %}
+
+
+<a href="/messenger/chat/{{ buddy.buddy }}">
+
+{{ buddy.buddy }}
+
+</a>
+
+
+{% if buddy.status == "away" %}
+
+<br>
+
+<small>
+AWAY: {{ buddy.away }}
+</small>
+
+{% endif %}
+
+</div>
+
+<hr>
+
+{% else %}
+
+No buddies yet.
+
+{% endfor %}
+
+</div>
+
+
+<div class="box">
+
+<h3>
+Add Buddy
+</h3>
+
+<form method="post"
+action="/messenger/add-buddy">
+
+<input
+name="buddy"
+size="20">
+
+<input
+type="submit"
+value="ADD">
+
+</form>
+
+</div>
+
+
+</td>
+
+
+<td valign="top">
+
+
+<div class="box">
+
+<h2>
+My Status
+</h2>
+
+
+<form method="post"
+action="/messenger/status">
+
+
+<select name="status">
+
+<option value="online"
+{% if user.status == "online" %}
+selected
+{% endif %}>
+ONLINE
+</option>
+
+<option value="away"
+{% if user.status == "away" %}
+selected
+{% endif %}>
+AWAY
+</option>
+
+<option value="offline"
+{% if user.status == "offline" %}
+selected
+{% endif %}>
+OFFLINE
+</option>
+
+</select>
+
+
+<br><br>
+
+
+Away Message:
+
+<br>
+
+<input
+name="away"
+value="{{ user.away }}"
+size="45">
+
+
+<br><br>
+
+
+<input
+type="submit"
+value="UPDATE STATUS">
+
+</form>
+
+</div>
+
+
+<div class="box">
+
+<h2>
+CyberMessenger News
+</h2>
+
+<ul>
+
+<li>Welcome to CyberMessenger 97!</li>
+
+<li>New emoticons coming soon!</li>
+
+<li>Voice chat requires a 28.8k modem.</li>
+
+<li>Don't forget to register your screen name!</li>
+
+</ul>
+
+</div>
+
+
+<div class="box center">
+
+<pre>
+
+:-)
+:D
+;)
+:-P
+:-(
+
+CYBERMESSENGER
+EMOTICON CENTRAL
+
+</pre>
+
+</div>
+
+
+</td>
+
+</tr>
+
+</table>
+
+
+<div class="center">
+
+<a href="/messenger/logout">
+SIGN OFF
+</a>
+
+&nbsp; | &nbsp;
+
+<a href="/">
+CYBERNET HOME
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

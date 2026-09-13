@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>
+CyberNet BBS
+</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='retro.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<div class="titlebar">
+
+CyberNet Bulletin Board System
+
+</div>
+
+
+
+<h1>
+📌 CYBERNET BBS
+</h1>
+
+
+
+<div class="box">
+
+
+<h2>
+Latest Messages
+</h2>
+
+
+
+{% for post in posts %}
+
+
+<div class="box">
+
+
+<b>
+
+FROM:
+
+{{post.username}}
+
+</b>
+
+
+<br><br>
+
+
+{{post.message}}
+
+
+<br><br>
+
+
+<small>
+
+Posted:
+
+{{post.created}}
+
+</small>
+
+
+
+</div>
+
+
+
+{% else %}
+
+
+<center>
+
+No messages posted yet.
+
+<br>
+
+Be the first!
+
+</center>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+Post a Message
+</h2>
+
+
+
+<form method="post"
+action="/bbs">
+
+
+
+Your Name:
+
+<br>
+
+
+<input
+type="text"
+name="username"
+value="Anonymous"
+size="30">
+
+
+<br><br>
+
+
+Message:
+
+<br>
+
+
+<textarea
+name="message"
+rows="6"
+cols="60"></textarea>
+
+
+
+<br><br>
+
+
+<input
+type="submit"
+value="POST MESSAGE">
+
+
+</form>
+
+
+</div>
+
+
+
+
+<center>
+
+<a href="/">
+Return to CyberNet
+
+</a>
+
+</center>
+
+
+</div>
+
+
+</body>
+
+</html>

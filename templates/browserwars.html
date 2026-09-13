@@ -1,0 +1,311 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>
+CyberNet Browser Wars 1997
+</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='retro.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<div class="titlebar">
+
+CyberNet Browser Wars
+
+</div>
+
+
+
+<center>
+
+<h1>
+⚔ BROWSER WARS 1997 ⚔
+</h1>
+
+
+<p>
+
+<b>
+THE BATTLE FOR THE WORLD WIDE WEB!
+</b>
+
+</p>
+
+
+</center>
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+Which browser is the best?
+</h2>
+
+
+<p>
+
+The Internet has spoken!
+
+Cast your vote and decide the future of cyberspace.
+
+</p>
+
+
+
+<form method="post"
+action="/browserwars">
+
+
+
+<input type="radio"
+name="browser"
+value="netscape"
+checked>
+
+<b>
+Netscape Navigator
+</b>
+
+<br>
+
+<img src="/static/netscape.gif"
+alt="Netscape"
+width="88"
+height="31">
+
+
+<br><br>
+
+
+
+<input type="radio"
+name="browser"
+value="internet_explorer">
+
+
+<b>
+Microsoft Internet Explorer
+</b>
+
+
+<br>
+
+
+<img src="/static/ie.gif"
+alt="Internet Explorer"
+width="88"
+height="31">
+
+
+
+<br><br>
+
+
+
+<input type="submit"
+value="CAST YOUR VOTE">
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+Current Results
+</h2>
+
+
+
+<table border="2"
+cellpadding="8"
+width="100%">
+
+
+<tr>
+
+<td>
+
+<b>
+Netscape Navigator
+</b>
+
+</td>
+
+
+<td>
+
+{{ votes["netscape"] }}
+
+votes
+
+</td>
+
+
+</tr>
+
+
+
+<tr>
+
+<td>
+
+<b>
+Microsoft Internet Explorer
+</b>
+
+</td>
+
+
+<td>
+
+{{ votes["internet_explorer"] }}
+
+votes
+
+</td>
+
+
+</tr>
+
+
+
+</table>
+
+
+
+<br>
+
+
+<center>
+
+
+<b>
+
+Total Votes:
+
+{{ total }}
+
+</b>
+
+
+</center>
+
+
+</div>
+
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+Browser Battle Stats
+</h2>
+
+
+<pre>
+
+        NETSCAPE                 INTERNET EXPLORER
+
+        \o/                      \o/
+         |                        |
+        / \                      / \
+
+
+        THE ORIGINAL             THE NEW CHALLENGER
+
+
+</pre>
+
+
+</div>
+
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+CyberNet Poll Rules
+</h2>
+
+
+<ul>
+
+<li>
+One vote per click
+</li>
+
+<li>
+Results update instantly
+</li>
+
+<li>
+Browser arguments are encouraged
+</li>
+
+<li>
+No fighting in the chat rooms
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+<center>
+
+<a href="/">
+
+Return to CyberNet Home
+
+</a>
+
+
+</center>
+
+
+
+
+
+</div>
+
+
+</body>
+
+
+</html>
